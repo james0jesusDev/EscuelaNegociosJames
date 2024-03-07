@@ -1,0 +1,29 @@
+﻿@using EscuelaNegociosJames.Models
+@model Departamento
+@{
+    ViewData["Title"] = "DepartamentoDetails";
+}
+
+<h1>DepartamentoDetails</h1>
+
+<h3>@Model.DepartmentName</h3>
+<table border="1" class="table table-hover">
+    <tr>
+        <th>Departamento Id</th>
+        <td>@Model.DepartamentoId</td>
+    </tr>
+    <tr>
+        <th>Email</th>
+        <td>@Model.Email</td>
+    </tr>
+    <tr>
+        <th>Phone</th>
+        <td>@Model.PhoneNumber</td>
+    </tr>
+    <tr>
+        <th>Office</th>
+        <td>@Model.OfficeLocation</td>
+    </tr>
+</table>
+
+<a asp-controller="Departamento" asp-action="AllDepartamento" class="btn btn-primary">Back to departamentos list</a>

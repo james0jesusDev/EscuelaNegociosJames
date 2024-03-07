@@ -1,0 +1,33 @@
+﻿@using EscuelaNegociosJames.Models
+@model IEnumerable<Student>
+@{
+    ViewData["Title"] = "AllStudent";
+}
+
+<h1>AllStudent</h1>
+
+<p><a class="btn btn-success" asp-action="AddStudent">Add an student</a></p>
+
+@{
+    if (Model.Count() < 1)
+    {
+        <p>No students in database yet</p>
+    }
+    else
+    {
+        <h3>All Student</h3>
+        <table border="1" class="table table-active">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+            </tr>
+            @foreach (var student in Model)
+            {
+                <tr>
+                    <td>@student.StudentID</td>
+                    <td>@student.StudentName</td>
+                </tr>
+            }
+        </table>
+    }
+}

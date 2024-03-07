@@ -1,0 +1,41 @@
+﻿@using EscuelaNegociosJames.Models
+@model IEnumerable<Club>
+@{
+    ViewData["Title"] = "AllClub";
+}
+
+<h1>AllClub</h1>
+<p><a class="btn btn-success" asp-action="AddClub">Add a club</a></p>
+
+@{
+    if (Model.Count() < 1)
+    {
+        <p>No clubs in database yet</p>
+    }
+    else
+    {
+        <h3>All Clubs</h3>
+        <table border="1" class="table table-striped">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Number of Students</th>
+                <th>Departamento</th>
+            </tr>
+            @foreach (var club in Model)
+            {
+                <tr>
+                    <td><a class="btn btn-success" asp-controller="Student" asp-action="EnrollCourse" asp-route-id="@club.ClubID">@club.ClubID</a></td>
+                    <td>@club.ClubName</td>
+                    <td>
+                        <a asp-controller="Student" asp-action="AllClassmate" asp-route-id="@club.ClubID" class="btn btn-success">
+                            @club.NumberOfStudents
+                        </a>
+                    </td>
+                    <td><a class="btn btn-success" asp-controller="Departamento" asp-action="DepartamentoDetails" asp-route-id="@club.Departamento.DepartamentoId">@club.Departamento.DepartmentName</a></td>
+                </tr>
+            }
+        </table>
+    }
+}
+

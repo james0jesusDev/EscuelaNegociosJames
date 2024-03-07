@@ -1,0 +1,24 @@
+﻿@using EscuelaNegociosJames.ViewModels
+@model ClubAddClubViewModel
+@{
+    ViewData["Title"] = "AddClub";
+}
+
+<h1>AddClub</h1>
+
+<form asp-controller="Club" asp-action="AddClub" method="post">
+    <label asp-for="Club.ClubName"></label>
+    <input asp-for="Club.ClubName" class="form-control" /><br />
+
+    <label asp-for="Club.NumberOfStudents"></label>
+    <input asp-for="Club.NumberOfStudents" class="form-control" /><br />
+
+    <label asp-for="Departamento.DepartmentName"></label>
+    <select asp-for="Departamento.DepartamentoId" asp-items="@Model.DepartamentoList" class="form-control"></select><br />
+
+    <button type="submit" class="btn btn-success">Add Club</button>
+
+
+</form>
+<br />
+<p><a asp-controller="Club" asp-action="AllClub" class="btn btn-secondary">Back to club list</a></p>

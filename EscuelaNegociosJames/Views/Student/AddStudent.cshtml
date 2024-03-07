@@ -1,0 +1,15 @@
+﻿@using EscuelaNegociosJames.Models
+@model Student
+@{
+    ViewData["Title"] = "AddStudent";
+}
+
+<h1>AddStudent</h1>
+
+<form asp-controller="Student" asp-action="AddStudent" method="post">
+    <label asp-for="StudentName"></label>
+    <input asp-for="StudentName" class="form-control" /><br />
+    <button type="submit" class="btn btn-info">Add Student</button>
+</form>
+<br />
+<p><a asp-controller="Student" asp-action="AllStudent" class="btn btn-secondary">Back to Student list</a></p>

@@ -1,0 +1,15 @@
+﻿@using EscuelaNegociosJames.Models
+@model Departamento
+@{
+    ViewData["Title"] = "AddDepartamento";
+}
+
+<h1>AddDepartamento</h1>
+
+<form asp-controller="Departamento" asp-action="AddDepartamento" method="post">
+    <label asp-for="DepartmentName"></label>
+    <input asp-for="DepartmentName" class="form-control" /><br />
+    <button type="submit" class="btn btn-info">Add Departamento</button>
+</form>
+<br />
+<p><a asp-controller="Departamento" asp-action="AllDepartamento" class="btn btn-secondary">Back to Departamento list</a></p>

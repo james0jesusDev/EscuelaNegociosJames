@@ -1,0 +1,38 @@
+﻿@using EscuelaNegociosJames.Models
+@model IEnumerable<Departamento>
+@{
+    ViewData["Title"] = "AllDepartamento";
+}
+
+<h1>AllDepartamento</h1>
+
+<p><a asp-action="AddDepartamento" class="btn btn-info">Add an departamento</a></p>
+@{
+    if (Model.Count() < 1)
+    {
+        <p>No departamentos in database yet</p>
+    }
+    else
+    {
+        <h3>All Departamentos</h3>
+        <table border="1" class="table table-active">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>PhoneNumber</th>
+                <th>Email</th>
+                <th>OfficeLocation</th>
+            </tr>
+            @foreach (var departamento in Model)
+            {
+                <tr>
+                    <td>@departamento.DepartamentoId</td>
+                    <td>@departamento.DepartmentName</td>
+                    <td>@departamento.PhoneNumber</td>
+                    <td>@departamento.Email</td>
+                    <td>@departamento.OfficeLocation</td>
+                </tr>
+            }
+        </table>
+    }
+}

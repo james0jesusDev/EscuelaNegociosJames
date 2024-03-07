@@ -1,0 +1,32 @@
+﻿@using EscuelaNegociosJames.Models
+@model List<Student>
+@{
+    ViewData["Title"] = "AllClassmate";
+}
+
+<h1>AllClassmate</h1>
+
+@{
+    if (Model.Count() < 1)
+    {
+        <p>No student registered in this club</p>
+    }
+    else
+    {
+        <h3>All enrolled Students</h3>
+        <table class="table table-striped">
+            <tr>
+                <th>Student Id</th>
+                <th>Student Name</th>
+            </tr>
+            @foreach (var student in Model)
+            {
+                <tr>
+                    <td>@student.StudentID</td>
+                    <td>@student.StudentName</td>
+                </tr>
+            }
+        </table>
+    }
+}
+<p><a asp-controller="Club" asp-action="AllClub" class="btn btn-success">Back to club list</a></p>
