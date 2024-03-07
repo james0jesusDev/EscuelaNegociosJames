@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 namespace EscuelaNegociosJames.Controllers
 {
 
-    // Cambios dia 8
+    // Cambios dia 8 a
     public class StudentController : Controller
     {
         Context _db;
