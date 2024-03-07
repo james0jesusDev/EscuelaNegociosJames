@@ -7,6 +7,8 @@ using Microsoft.EntityFrameworkCore;
 
 namespace EscuelaNegociosJames.Controllers
 {
+
+    // Cambios dia 8
     public class StudentController : Controller
     {
         Context _db;
